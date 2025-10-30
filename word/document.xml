@@ -4846,9 +4846,313 @@
                 </w:rPr>
             </w:pPr>
         </w:p>
-
         {% if var.content_declaration.product_content_declaration %}
+        <w:p w14:paraId="79A6F134" w14:textId="6607B45F" w:rsidR="00E30CDE" w:rsidRPr="00847121" w:rsidRDefault="00E30CDE" w:rsidP="00EE0970">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="BFBFBF" w:themeColor="background1" w:themeShade="BF"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:u w:val="single"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+                <w:t xml:space="preserve">The mass (weight) of one unit of declared unit: </w:t>
+            </w:r>
+        </w:p>
+        <!-- Sub-bullet for product mass with packaging -->
+        <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="1"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+                <w:t>{{ var.content_declaration.product_content_declaration | sum(attribute='mass') }}kg + its packaging ({% if var.content_declaration.packaging_content_declaration %}{{ var.content_declaration.packaging_content_declaration | sum(attribute='mass') }}kg{% endif %})</w:t>
+            </w:r>
+        </w:p>
 
+        <!-- Content of the product -->
+        <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="BFBFBF" w:themeColor="background1" w:themeShade="BF"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:u w:val="single"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+                <w:t>Content of the product in the form of a list of materials and substances, and their mass: </w:t>
+            </w:r>
+        </w:p>
+        <!-- Sub-bullets for individual products -->
+        {% for product in var.content_declaration.product_content_declaration %}
+        <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="1"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+                <w:t>{{ product.mass }}kg of {{ product.name }}</w:t>
+            </w:r>
+        </w:p>
+        {% endfor %}
+        {% endif %}
+
+        <!-- Packaging content -->
+        {% if var.content_declaration.packaging_content_declaration %}
+        <w:p w14:paraId="34C968D7" w14:textId="479F541C" w:rsidR="00CE59A4" w:rsidRDefault="008A51FC" w:rsidP="00CE59A4">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="BFBFBF" w:themeColor="background1" w:themeShade="BF"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:u w:val="single"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+                <w:t xml:space="preserve">The mass and the content of distribution and/or consumer packaging: </w:t>
+            </w:r>
+        </w:p>
+        <!-- Sub-bullets for packaging materials when multiple, single line when one -->
+        {% if var.content_declaration.packaging_content_declaration | length > 1 %}
+            {% for material in var.content_declaration.packaging_content_declaration %}
+            <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+                <w:pPr>
+                    <w:pStyle w:val="ListParagraph"/>
+                    <w:numPr>
+                        <w:ilvl w:val="1"/>
+                        <w:numId w:val="13"/>
+                    </w:numPr>
+                    <w:rPr>
+                        <w:rFonts w:cs="Arial"/>
+                        <w:color w:val="000000" w:themeColor="text1"/>
+                        <w:lang w:val="en-GB"/>
+                    </w:rPr>
+                </w:pPr>
+                <w:r w:rsidRPr="008154E3">
+                    <w:rPr>
+                        <w:rFonts w:cs="Arial"/>
+                        <w:color w:val="000000" w:themeColor="text1"/>
+                        <w:lang w:val="en-GB"/>
+                    </w:rPr>
+                    <w:t>{{ material.name }}: {{ material.mass }}kg</w:t>
+                </w:r>
+            </w:p>
+            {% endfor %}
+        {% else %}
+            <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+                <w:pPr>
+                    <w:pStyle w:val="ListParagraph"/>
+                    <w:numPr>
+                        <w:ilvl w:val="1"/>
+                        <w:numId w:val="13"/>
+                    </w:numPr>
+                    <w:rPr>
+                        <w:rFonts w:cs="Arial"/>
+                        <w:color w:val="000000" w:themeColor="text1"/>
+                        <w:lang w:val="en-GB"/>
+                    </w:rPr>
+                </w:pPr>
+                <w:r w:rsidRPr="008154E3">
+                    <w:rPr>
+                        <w:rFonts w:cs="Arial"/>
+                        <w:color w:val="000000" w:themeColor="text1"/>
+                        <w:lang w:val="en-GB"/>
+                    </w:rPr>
+                    <w:t>{% for material in var.content_declaration.packaging_content_declaration %}{{ material.name }}: {{ material.mass }}kg{% if not loop.last %}, {% endif %}{% endfor %}</w:t>
+                </w:r>
+            </w:p>
+        {% endif %}
+        {% endif %}
+
+
+        <!-- Environmental and Hazardous Properties -->
+        {% if var.content_declaration.hazardous_substance_declaration %}
+        <w:p w14:paraId="139EA449" w14:textId="0282B631" w:rsidR="00CE59A4" w:rsidRDefault="00CE59A4" w:rsidP="00CE59A4">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="BFBFBF" w:themeColor="background1" w:themeShade="BF"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:u w:val="single"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+                <w:t xml:space="preserve">Information on the environmental and hazardous/toxic properties of substances contained in the product: </w:t>
+            </w:r>
+        </w:p>
+        <!-- Sub-bullets for each hazardous substance -->
+        {% for substance in var.content_declaration.hazardous_substance_declaration %}
+        <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="1"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+                <w:t>{{ substance.name }}: {{ substance.mass_percentage }}%</w:t>
+            </w:r>
+        </w:p>
+        {% endfor %}
+
+        <w:p w14:paraId="48113227" w14:textId="3E1D3B8F" w:rsidR="00CE59A4" w:rsidRDefault="008154E3" w:rsidP="00CE59A4">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="BFBFBF" w:themeColor="background1" w:themeShade="BF"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial" w:hint="eastAsia"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:u w:val="single"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+                <w:t xml:space="preserve">Other information on substances with hazardous and toxic properties:</w:t>
+            </w:r>
+        </w:p>
+        {% endif %}
+
+
+        <!-- Biogenic/Recycled Materials -->
+        {% if var.content_declaration.product_content_declaration %}
+        <w:p w14:paraId="7FD623C3" w14:textId="5B7BD763" w:rsidR="00CE59A4" w:rsidRPr="008154E3" w:rsidRDefault="00CE59A4" w:rsidP="008154E3">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="BFBFBF" w:themeColor="background1" w:themeShade="BF"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:u w:val="single"/>
+                    <w:lang w:val="en-GB" w:eastAsia="zh-CN"/>
+                </w:rPr>
+                <w:t xml:space="preserve">The declared share of biogenic/recycled materials: </w:t>
+            </w:r>
+        </w:p>
+        <!-- Sub-bullets for biogenic/recycled content - showing all values including zeros -->
+        {% for product in var.content_declaration.product_content_declaration %}
+        <w:p w14:paraId="4203D2C7" w14:textId="74F0CEB0" w:rsidR="001960BE" w:rsidRPr="008834DD" w:rsidRDefault="008154E3" w:rsidP="008834DD">
+            <w:pPr>
+                <w:pStyle w:val="ListParagraph"/>
+                <w:numPr>
+                    <w:ilvl w:val="1"/>
+                    <w:numId w:val="13"/>
+                </w:numPr>
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="008154E3">
+                <w:rPr>
+                    <w:rFonts w:cs="Arial"/>
+                    <w:color w:val="000000" w:themeColor="text1"/>
+                    <w:lang w:val="en-GB"/>
+                </w:rPr>
+                <w:t>{{ product.name }}: Post-consumer recycled: {{ product.post_consumer_recycled_percentage }}%, Biogenic material: {{ product.biogenic_percentage }}%, Biogenic carbon: {{ product.biogenic_carbon }}kg C/declared unit</w:t>
+            </w:r>
+        </w:p>
+        {% endfor %}
+        {% endif %}
+        {% if var.content_declaration.product_content_declaration %}
+        
         <w:tbl>
             <w:tblPr>
                 <w:tblStyle w:val="TableGrid"/>
@@ -5018,13 +5322,12 @@
                 </w:tc>
             </w:tr>
             <w:bookmarkEnd w:id="1"/>
-
-            <!-- for row in list of product content declaration: -->
-
+            {% for product in var.content_declaration.product_content_declaration %}
             <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="6BE57041" w14:textId="639D31F8" w:rsidTr="00BE7349">
                 <w:trPr>
                     <w:trHeight w:val="560"/>
                 </w:trPr>
+                <!-- Product content -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1241" w:type="pct"/>
@@ -5042,10 +5345,11 @@
                             <w:rPr>
                                 <w:sz w:val="16"/>
                             </w:rPr>
-                            <w:t xml:space="preserve">TEST</w:t>
+                            <w:t xml:space="preserve">{{ product.name }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Mass, kg -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="521" w:type="pct"/>
@@ -5060,8 +5364,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.mass }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Post-consumer recycled material, mass-% of product -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1124" w:type="pct"/>
@@ -5076,8 +5389,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.post_consumer_recycled_percentage }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Biogenic material, mass-% of product -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1057" w:type="pct"/>
@@ -5092,12 +5414,22 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.biogenic_percentage }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Biogenic material, kg C/product or declared unit -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1057" w:type="pct"/>
                         <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
+                        <w:vAlign w:val="center"/>
                     </w:tcPr>
                     <w:p w14:paraId="2092DAAD" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
                         <w:pPr>
@@ -5107,195 +5439,19 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
-                    </w:p>
-                </w:tc>
-            </w:tr>
-
-
-
-            <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="27077875" w14:textId="3CDBE1AF" w:rsidTr="00BE7349">
-                <w:trPr>
-                    <w:trHeight w:val="560"/>
-                </w:trPr>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1241" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="5C1056A9" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:pStyle w:val="Tablenothead"/>
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                        </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                            <w:t>Material 2 / Chemical substance 2</w:t>
-                        </w:r>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="521" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="79D984B5" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1124" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="28C50280" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1057" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="28FDADF6" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1057" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="5A6DD150" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-            </w:tr>
-            <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="5FA888BA" w14:textId="4203C2A1" w:rsidTr="00BE7349">
-                <w:trPr>
-                    <w:trHeight w:val="560"/>
-                </w:trPr>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1241" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="64A4DBEC" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:vertAlign w:val="superscript"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
                         <w:r w:rsidRPr="00847121">
                             <w:rPr>
                                 <w:rFonts w:cs="Arial"/>
                                 <w:sz w:val="16"/>
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
-                            <w:lastRenderedPageBreak/>
-                            <w:t>...</w:t>
+                            <w:t>{{ product.biogenic_carbon }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="521" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="2395C826" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1124" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="442C245C" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1057" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="6C7BACFE" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1057" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="254E68CA" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
             </w:tr>
+            {% endfor %}
+            <!-- total -->
             <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="0B236000" w14:textId="4C16E01A" w:rsidTr="00BE7349">
                 <w:trPr>
                     <w:trHeight w:val="560"/>
@@ -5338,6 +5494,14 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.product_content_declaration | sum(attribute='mass') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -5352,6 +5516,12 @@
                                 <w:rStyle w:val="CommentReference"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rStyle w:val="CommentReference"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.product_content_declaration | sum(attribute='post_consumer_recycled_percentage') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -5368,12 +5538,21 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.product_content_declaration | sum(attribute='biogenic_percentage') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1057" w:type="pct"/>
                         <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
+                        <w:vAlign w:val="center"/>
                     </w:tcPr>
                     <w:p w14:paraId="24A033AB" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
                         <w:pPr>
@@ -5383,6 +5562,14 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.product_content_declaration | sum(attribute='biogenic_carbon') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
             </w:tr>
@@ -5505,10 +5692,12 @@
                     </w:p>
                 </w:tc>
             </w:tr>
+            {% for product in var.content_declaration.packaging_content_declaration %}
             <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="34EE5330" w14:textId="77777777" w:rsidTr="00BE7349">
                 <w:trPr>
                     <w:trHeight w:val="398"/>
                 </w:trPr>
+                <!-- Material name -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1574" w:type="pct"/>
@@ -5526,10 +5715,11 @@
                             <w:rPr>
                                 <w:sz w:val="16"/>
                             </w:rPr>
-                            <w:t>Material 1</w:t>
+                            <w:t>{{ product.name }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Mass, kg -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="661" w:type="pct"/>
@@ -5544,8 +5734,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.mass }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Mass percentage -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1424" w:type="pct"/>
@@ -5560,8 +5759,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.mass_percentage }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Biogenic carbon -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1341" w:type="pct"/>
@@ -5576,161 +5784,24 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
-                    </w:p>
-                </w:tc>
-            </w:tr>
-            <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="1AE892AC" w14:textId="77777777" w:rsidTr="00BE7349">
-                <w:trPr>
-                    <w:trHeight w:val="398"/>
-                </w:trPr>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1574" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="35FA39FF" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:pStyle w:val="Tablenothead"/>
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                        </w:pPr>
                         <w:r w:rsidRPr="00847121">
                             <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
                                 <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
                             </w:rPr>
-                            <w:t>Material 2</w:t>
+                            <w:t>{{ product.biogenic_carbon }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="661" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="5B8FB225" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1424" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="32B20C5C" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1341" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="7390F3DE" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
             </w:tr>
-            <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="3F23DCEC" w14:textId="77777777" w:rsidTr="00BE7349">
-                <w:trPr>
-                    <w:trHeight w:val="398"/>
-                </w:trPr>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1574" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="674F903F" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:pStyle w:val="Tablenothead"/>
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                        </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                            <w:t>…</w:t>
-                        </w:r>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="661" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="725DB0D4" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1424" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="0F559D18" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1341" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="627860BB" w14:textId="77777777" w:rsidR="00BE7349" w:rsidRPr="00847121" w:rsidRDefault="00BE7349" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-            </w:tr>
+            {% endfor %}
+            <!-- total -->
             <w:tr w:rsidR="00BE7349" w:rsidRPr="00847121" w14:paraId="344191EA" w14:textId="77777777" w:rsidTr="00BE7349">
                 <w:trPr>
                     <w:trHeight w:val="398"/>
                 </w:trPr>
+                <!-- Total label -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1574" w:type="pct"/>
@@ -5752,6 +5823,7 @@
                         </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Total mass -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="661" w:type="pct"/>
@@ -5766,8 +5838,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.packaging_content_declaration | sum(attribute='mass') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Total mass percentage -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1424" w:type="pct"/>
@@ -5782,8 +5863,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.packaging_content_declaration | sum(attribute='mass_percentage') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Total biogenic carbon -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1341" w:type="pct"/>
@@ -5798,6 +5888,14 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ var.content_declaration.packaging_content_declaration | sum(attribute='biogenic_carbon') }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
             </w:tr>
@@ -5949,10 +6047,12 @@
                     </w:p>
                 </w:tc>
             </w:tr>
+            {% for product in var.content_declaration.hazardous_substance_declaration %}
             <w:tr w:rsidR="0085462C" w:rsidRPr="00847121" w14:paraId="00E024D7" w14:textId="77777777" w:rsidTr="00C62AD4">
                 <w:trPr>
                     <w:trHeight w:val="560"/>
                 </w:trPr>
+                <!-- Substance name -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="1574" w:type="pct"/>
@@ -5970,10 +6070,11 @@
                             <w:rPr>
                                 <w:sz w:val="16"/>
                             </w:rPr>
-                            <w:t xml:space="preserve">Substance 1 </w:t>
+                            <w:t>{{ product.name }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
+                <!-- EC No. -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="661" w:type="pct"/>
@@ -5988,8 +6089,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.ec_no }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- CAS No. -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="657" w:type="pct"/>
@@ -6004,8 +6114,17 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r w:rsidRPr="00847121">
+                            <w:rPr>
+                                <w:rFonts w:cs="Arial"/>
+                                <w:sz w:val="16"/>
+                                <w:lang w:val="en-GB"/>
+                            </w:rPr>
+                            <w:t>{{ product.cas_no }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
+                <!-- Mass percentage -->
                 <w:tc>
                     <w:tcPr>
                         <w:tcW w:w="2109" w:type="pct"/>
@@ -6020,161 +6139,18 @@
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
                         </w:pPr>
-                    </w:p>
-                </w:tc>
-            </w:tr>
-            <w:tr w:rsidR="0085462C" w:rsidRPr="00847121" w14:paraId="2C384CD9" w14:textId="77777777" w:rsidTr="00C62AD4">
-                <w:trPr>
-                    <w:trHeight w:val="560"/>
-                </w:trPr>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1574" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="31F20E45" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:pStyle w:val="Tablenothead"/>
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                        </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:sz w:val="16"/>
-                            </w:rPr>
-                            <w:t>Substance 2</w:t>
-                        </w:r>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="661" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="2E1A2F75" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="657" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="3D9B57EF" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="2109" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="0B894568" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-            </w:tr>
-            <w:tr w:rsidR="0085462C" w:rsidRPr="00847121" w14:paraId="2B2B33DB" w14:textId="77777777" w:rsidTr="00C62AD4">
-                <w:trPr>
-                    <w:trHeight w:val="560"/>
-                </w:trPr>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="1574" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="06E8DECD" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:vertAlign w:val="superscript"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
                         <w:r w:rsidRPr="00847121">
                             <w:rPr>
                                 <w:rFonts w:cs="Arial"/>
                                 <w:sz w:val="16"/>
                                 <w:lang w:val="en-GB"/>
                             </w:rPr>
-                            <w:t>...</w:t>
+                            <w:t>{{ product.mass_percentage }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="661" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="2EB81A44" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="657" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="67D47A98" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
-                <w:tc>
-                    <w:tcPr>
-                        <w:tcW w:w="2109" w:type="pct"/>
-                        <w:shd w:val="clear" w:color="auto" w:fill="E1E7E0" w:themeFill="accent2" w:themeFillTint="33"/>
-                        <w:vAlign w:val="center"/>
-                    </w:tcPr>
-                    <w:p w14:paraId="5D6FF587" w14:textId="77777777" w:rsidR="0085462C" w:rsidRPr="00847121" w:rsidRDefault="0085462C" w:rsidP="00C62AD4">
-                        <w:pPr>
-                            <w:rPr>
-                                <w:rFonts w:cs="Arial"/>
-                                <w:sz w:val="16"/>
-                                <w:lang w:val="en-GB"/>
-                            </w:rPr>
-                        </w:pPr>
-                    </w:p>
-                </w:tc>
             </w:tr>
+            {% endfor %}
         </w:tbl>
         
         {% endif %}
