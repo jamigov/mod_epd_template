@@ -9975,6 +9975,7 @@
                     </w:p>
                 </w:tc>
             </w:tr>
+            <!-- Modules declared row -->
             <w:tr w:rsidR="00ED163C" w:rsidRPr="00847121" w14:paraId="2E3DF4AC" w14:textId="77777777" w:rsidTr="00080186">
                 <w:trPr>
                     <w:trHeight w:val="460"/>
@@ -10041,6 +10042,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.A1 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10068,6 +10072,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.A2 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10094,6 +10101,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.A3 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10121,6 +10131,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.A4 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10148,6 +10161,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.A5 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10175,6 +10191,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B1 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10202,6 +10221,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B2 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10229,6 +10251,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B3 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10256,6 +10281,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B4 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10283,6 +10311,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B5 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10310,6 +10341,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B6 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10337,6 +10371,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.B7 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10364,6 +10401,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.C1 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10391,6 +10431,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.C2 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10418,6 +10461,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.C3 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10445,6 +10491,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.C4 or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10499,9 +10548,13 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[0].evaluation.D or "ND" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
             </w:tr>
+            <!-- Geography row -->
             <w:tr w:rsidR="00ED163C" w:rsidRPr="00847121" w14:paraId="633D12B1" w14:textId="77777777" w:rsidTr="00080186">
                 <w:trPr>
                     <w:trHeight w:val="460"/>
@@ -10561,6 +10614,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.A1 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10588,6 +10644,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.A2 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10614,6 +10673,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.A3 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10641,6 +10703,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.A4 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10668,6 +10733,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.A5 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10695,6 +10763,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B1 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10722,6 +10793,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B2 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10749,6 +10823,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B3 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10776,6 +10853,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B4 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10803,6 +10883,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B5 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10830,6 +10913,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B6 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10857,6 +10943,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.B7 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10884,6 +10973,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.C1 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10911,6 +11003,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.C2 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10938,6 +11033,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.C3 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -10965,6 +11063,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.C4 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -11019,9 +11120,13 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[1].evaluation.D or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
             </w:tr>
+            <!-- Specific data used row -->
             <w:tr w:rsidR="00080186" w:rsidRPr="00847121" w14:paraId="29611CC9" w14:textId="77777777" w:rsidTr="00080186">
                 <w:trPr>
                     <w:trHeight w:val="460"/>
