@@ -11188,6 +11188,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.A1 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -11214,6 +11217,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.A4 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -11240,6 +11246,9 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.A5 or "-" }}</w:t>
+                        </w:r>
                     </w:p>
                 </w:tc>
                 <w:tc>
@@ -11267,13 +11276,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B1 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11302,13 +11306,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B2 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11337,13 +11336,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B3 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11372,13 +11366,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B4 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11407,13 +11396,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B5 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11442,13 +11426,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B6 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11477,13 +11456,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.B7 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11512,13 +11486,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.C1 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11547,13 +11516,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.C2 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11582,13 +11546,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.C3 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11617,13 +11576,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.C4 or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
@@ -11679,13 +11633,8 @@
                                 <w:szCs w:val="16"/>
                             </w:rPr>
                         </w:pPr>
-                        <w:r w:rsidRPr="00847121">
-                            <w:rPr>
-                                <w:color w:val="000000"/>
-                                <w:sz w:val="16"/>
-                                <w:szCs w:val="16"/>
-                            </w:rPr>
-                            <w:t>-</w:t>
+                        <w:r>
+                            <w:t>{{ var.lca_information.lca_evaluation[2].evaluation.D or "-" }}</w:t>
                         </w:r>
                     </w:p>
                 </w:tc>
